@@ -1,42 +1,104 @@
-<!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<!doctype html>
+<html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#0F172A" />
-    <meta
-      name="description"
-      content="Portfolio of Uday Pratap Singh – Computer Science student building full-stack web applications and applied AI systems with React, Node.js, MongoDB, and Python."
-    />
-    <meta name="author" content="Uday Pratap Singh" />
-
-    <!-- Open Graph Meta Tags -->
-    <meta property="og:title" content="Uday Pratap Singh | Software Development Intern" />
-    <meta
-      property="og:description"
-      content="Computer Science student building full-stack web applications and applied AI systems with React, Node.js, MongoDB, and Python."
-    />
-    <meta property="og:type" content="website" />
-
-    <!-- Google Fonts: Inter and JetBrains Mono -->
+    <meta name="description" content="Uday Pratap Singh — software developer building full-stack and AI applications." />
+    <title>Uday Pratap Singh | Developer</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap"
-      rel="stylesheet"
-    />
-
-    <!-- UP Monogram SVG Favicon -->
-    <link
-      rel="icon"
-      type="image/svg+xml"
-      href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><rect width='32' height='32' fill='%230F172A'/><text x='16' y='21' font-family='Inter, sans-serif' font-weight='700' font-size='13' fill='%233B82F6' text-anchor='middle'>UP</text></svg>"
-    />
-
-    <title>Uday Pratap Singh | Software Development Intern</title>
+    <link href="https://fonts.googleapis.com/css2?family=Figtree:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css" />
+    <link rel="stylesheet" href="styles.css" />
   </head>
-  <body class="bg-bg text-text antialiased selection:bg-accent selection:text-text font-sans">
-    <div id="root"></div>
-    <script type="module" src="/src/main.jsx"></script>
+  <body>
+    <header class="topbar">
+      <nav class="topnav" aria-label="Primary navigation">
+        <a class="active" href="#home">Home</a><a href="#projects">Projects</a><a href="#resume">Resume</a><a href="#contact">Support</a>
+      </nav>
+      <div class="top-actions">
+        <a class="top-social" href="mailto:udaypratap6145@gmail.com" aria-label="Email Uday">✉</a>
+        <a class="top-social" href="https://www.linkedin.com/in/uday-pratap-singh-8a0a40375" aria-label="Uday's LinkedIn">in</a>
+        <a class="top-social" href="https://github.com/Uday-6145" aria-label="Uday's GitHub">◖</a>
+      </div>
+    </header>
+
+    <main id="home" class="page">
+      <section class="profile">
+        <div class="portrait"><img src="profile.png" alt="Uday Pratap Singh profile picture" /></div>
+        <div class="profile-copy">
+          <h1>Uday Pratap Singh <span class="spark">✦</span></h1>
+          <p class="handle"><a href="https://x.com/udaypratap9531">@uday6145</a></p>
+          <h2>Building thoughtful software <span class="dot">◉</span></h2>
+          <p class="location">⌖ India <b>•</b> <span id="clock">07:31:02 pm</span></p>
+        </div>
+      </section>
+
+      <ul class="intro">
+        <li>Hi, I am a <strong>Software Engineering student</strong></li>
+        <li>Building complete applications across <strong>frontend, backend,</strong> and <strong>applied AI.</strong></li>
+        <li>Always <strong>shipping, learning,</strong> and improving the things I build.</li>
+      </ul>
+
+      <div class="social-row">
+        <a class="social-card" href="mailto:udaypratap6145@gmail.com"><span class="social-icon">✉</span><span><strong>Email me</strong><small>udaypratap6145@gmail.com</small></span><b>↗</b></a>
+        <a class="social-card compact" href="https://www.linkedin.com/in/uday-pratap-singh-8a0a40375"><span class="social-icon">in</span><span><strong>LinkedIn</strong><small>Connect with me</small></span><b>↗</b></a>
+        <a class="social-card compact" href="https://github.com/Uday-6145"><span class="social-icon">◖</span><span><strong>GitHub</strong><small>See my code</small></span><b>↗</b></a>
+      </div>
+
+      <div class="quick-links"><a href="mailto:udaypratap6145@gmail.com">✉</a><a href="https://github.com/Uday-6145">◖</a><a href="https://www.linkedin.com/in/uday-pratap-singh-8a0a40375">in</a><a href="#resume">↓</a></div>
+
+      <section class="section" id="resume">
+        <h2 class="section-title">My Skills</h2>
+        <p class="skills-hint">Drag the skills to arrange them in your preferred order.</p>
+        <div class="skills" id="skills" aria-label="Draggable skills">
+          <span draggable="true"><i class="devicon-react-original colored"></i>React.js</span>
+          <span draggable="true"><i class="devicon-nodejs-plain colored"></i>Node.js</span>
+          <span draggable="true"><i class="devicon-javascript-plain colored"></i>JavaScript</span>
+          <span draggable="true"><i class="devicon-python-plain colored"></i>Python</span>
+          <span draggable="true"><i class="devicon-mongodb-plain colored"></i>MongoDB</span>
+          <span draggable="true"><i class="devicon-express-original"></i>Express.js</span>
+          <span draggable="true"><i class="devicon-tailwindcss-original colored"></i>Tailwind CSS</span>
+          <span draggable="true"><i class="devicon-mysql-plain colored"></i>MySQL</span>
+          <span draggable="true"><i class="devicon-git-plain colored"></i>Git</span>
+          <span draggable="true"><i class="devicon-github-original"></i>GitHub</span>
+          <span draggable="true"><i class="devicon-python-plain colored"></i>LangChain</span>
+          <span draggable="true"><i class="skill-glyph">API</i>REST APIs</span>
+        </div>
+      </section>
+
+      <section class="section education-section">
+        <h2 class="section-title">Education</h2>
+        <div class="education-card"><div><strong>NIAT · Software Engineering</strong><small>B.Tech · 2025 — 2029 · CGPA 8.75</small></div><div><strong>Kaushalya Devi Public School</strong><small>Class XII · 2024 — 2025</small></div><div><strong>Gyan Vallen Co-Ed School</strong><small>Class X · 2022 — 2023</small></div></div>
+      </section>
+
+      <section class="section achievements-section">
+        <h2 class="section-title">Achievements</h2>
+        <div class="achievement-list"><div><strong>2nd place</strong><small>Webathon — built a webpage in three hours</small></div><div><strong>Finalist</strong><small>OpenAI Buildathon</small></div><div><strong>Finalist</strong><small>Smart India Hackathon internal round</small></div></div>
+      </section>
+
+      <section class="section">
+        <h2 class="section-title">/contributions</h2>
+        <div class="contributions" aria-live="polite">
+          <div class="contribution-head"><span><b id="contribution-count">Loading GitHub activity…</b></span><a href="https://github.com/Uday-6145">View GitHub ↗</a></div>
+          <div class="months" id="contribution-months"></div>
+          <div class="heatmap" id="heatmap"></div>
+          <div class="contribution-footer"><span id="contribution-status">Syncing with GitHub</span><span>Less <i></i><i></i><i class="bright"></i> More</span></div>
+        </div>
+      </section>
+
+      <section class="section" id="projects">
+        <h2 class="section-title">My Projects</h2>
+        <div class="project-list">
+          <article class="project-row"><div class="project-thumb thumb-purple"><span>4 agents</span><strong>Kestrel</strong><small>RAG research assistant</small></div><div class="project-info"><div class="project-head"><h3>Kestrel <em>✦</em></h3><div><a href="https://github.com/Uday-6145/Kestrel_Research_Assistant">↗ GitHub</a></div></div><p>Multi-agent research assistant that retrieves, verifies, and synthesizes evidence before preparing an answer.</p><b>Technologies Used:</b><div class="chips"><span>Python</span><span>LangGraph</span><span>ChromaDB</span><span>Groq</span></div></div></article>
+          <article class="project-row"><div class="project-thumb thumb-orange"><span>200 OK</span><strong>CourseApp</strong><small>users / courses / purchases</small></div><div class="project-info"><div class="project-head"><h3>CourseApp</h3><div><a href="https://course-selling-backend-puce.vercel.app/">↗ Live</a><a href="https://github.com/Uday-6145/Course-selling-backend">◖ GitHub</a></div></div><p>Course-selling backend with clean REST APIs, MongoDB models, authentication, and purchase flows.</p><b>Technologies Used:</b><div class="chips"><span>Node.js</span><span>Express</span><span>MongoDB</span><span>JWT</span></div></div></article>
+          <article class="project-row"><div class="project-thumb thumb-blue"><span>PRIME DEALS</span><strong>Market</strong><small>shop better, faster</small></div><div class="project-info"><div class="project-head"><h3>E-Commerce Web App</h3><div><a href="https://github.com/Uday-6145/E-commerce-website">◖ GitHub</a></div></div><p>Responsive product catalogue with live API data, sorting, loading states, JWT login, and protected routes.</p><b>Technologies Used:</b><div class="chips"><span>React</span><span>JavaScript</span><span>React Router</span></div></div></article>
+        </div>
+      </section>
+
+      <section class="connect" id="contact"><h2>Let's Connect</h2><p>Feel free to reach out through any of these platforms</p><div><a href="mailto:udaypratap6145@gmail.com">✉ Email</a><a href="https://www.linkedin.com/in/uday-pratap-singh-8a0a40375">in LinkedIn</a><a href="https://github.com/Uday-6145">◖ GitHub</a><a href="#resume">↓ Resume</a></div></section>
+      <footer><i>“Nothing is perfect — but you can make it better.”</i><strong>Designed &amp; Made with <span>♥</span></strong><small>2026. All rights reserved</small></footer>
+    </main>
+    <script type="module" src="script.js"></script>
   </body>
 </html>
