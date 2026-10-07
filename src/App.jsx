@@ -11,12 +11,16 @@ import Resume from './components/Resume.jsx';
 import Contact from './components/Contact.jsx';
 import Footer from './components/Footer.jsx';
 import SectionDivider from './components/SectionDivider.jsx';
+import BackgroundEffects from './components/BackgroundEffects.jsx';
 
 export default function App() {
   const [preloaderDone, setPreloaderDone] = useState(false);
 
   return (
-    <div className="min-h-screen bg-bg text-text selection:bg-accent selection:text-white flex flex-col">
+    <div className="relative min-h-screen bg-[#0B0F19] text-[#F8FAFC] selection:bg-blue-600 selection:text-white flex flex-col overflow-x-hidden">
+      {/* Dynamic Ambient Background Effects */}
+      <BackgroundEffects />
+
       {/* 1. Preloader */}
       {!preloaderDone && <Preloader onComplete={() => setPreloaderDone(true)} />}
 
@@ -24,7 +28,7 @@ export default function App() {
       <Navbar />
 
       {/* 3. Main Content Area */}
-      <main className="flex-1">
+      <main className="relative z-10 flex-1">
         {/* Hero Section */}
         <Hero />
 

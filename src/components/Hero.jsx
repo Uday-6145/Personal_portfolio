@@ -1,6 +1,6 @@
 import React from 'react';
 import { motion, useReducedMotion } from 'framer-motion';
-import { ArrowDown, Download, Github, Linkedin, Mail, ExternalLink } from 'lucide-react';
+import { ArrowDown, Download, Github, Linkedin, Mail, Sparkles, Terminal, Cpu } from 'lucide-react';
 import { personalInfo, links } from '../data/content.js';
 
 export default function Hero() {
@@ -24,7 +24,7 @@ export default function Hero() {
       y: 0,
       transition: {
         duration: shouldReduceMotion ? 0.2 : 0.5,
-        ease: 'easeOut',
+        ease: [0.16, 1, 0.3, 1],
       },
     },
   };
@@ -33,7 +33,7 @@ export default function Hero() {
     e.preventDefault();
     const element = document.getElementById(targetId);
     if (element) {
-      const navHeight = 72;
+      const navHeight = 76;
       window.scrollTo({
         top: element.offsetTop - navHeight,
         behavior: 'smooth',
@@ -42,34 +42,52 @@ export default function Hero() {
   };
 
   return (
-    <section id="top" className="py-20 md:py-28 max-w-content mx-auto px-6">
+    <section id="top" className="relative pt-24 pb-20 md:pt-32 md:pb-28 max-w-content mx-auto px-6 overflow-hidden">
+      {/* Ambient Gradient Highlights behind Hero */}
+      <div
+        className="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[350px] bg-gradient-to-tr from-blue-600/15 via-indigo-600/15 to-cyan-500/10 blur-[100px] pointer-events-none -z-10"
+        aria-hidden="true"
+      />
+
       <motion.div
         variants={containerVariants}
         initial="hidden"
         animate="visible"
         className="max-w-3xl flex flex-col items-start"
       >
-        {/* Monogram Badge */}
-        <motion.div variants={itemVariants} className="mb-6 flex items-center gap-3">
-          <span className="font-mono text-xs uppercase tracking-widest text-accent px-2.5 py-1 bg-card border border-border">
-            Portfolio
-          </span>
-          <span className="h-px w-8 bg-border" aria-hidden="true" />
-          <span className="font-mono text-xs text-muted">2026</span>
+        {/* Availability Status Badge with Pulsing Beacon */}
+        <motion.div variants={itemVariants} className="mb-6">
+          <div className="inline-flex items-center gap-2.5 px-3.5 py-1.5 rounded-full bg-slate-900/90 border border-slate-700/80 shadow-sm backdrop-blur-md">
+            <span className="relative flex h-2 w-2">
+              <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex rounded-full h-2 w-2 bg-emerald-500" />
+            </span>
+            <span className="text-xs font-mono text-slate-300">
+              Seeking Software Development Intern Roles
+            </span>
+            <span className="h-3 w-px bg-slate-700 mx-0.5" />
+            <span className="text-xs font-mono text-cyan-400 flex items-center gap-1">
+              <Sparkles className="w-3 h-3" />
+              <span>Full-Stack & AI</span>
+            </span>
+          </div>
         </motion.div>
 
-        {/* Name */}
+        {/* Hero Name with Dynamic Gradient Accent */}
         <motion.h1
           variants={itemVariants}
-          className="text-4xl sm:text-5xl md:text-6xl font-bold tracking-tight text-text leading-tight mb-4"
+          className="text-4xl sm:text-6xl md:text-7xl font-extrabold tracking-tight text-white leading-[1.1] mb-5"
         >
-          {personalInfo.name}
+          Hi, I'm{' '}
+          <span className="bg-clip-text text-transparent bg-gradient-to-r from-blue-400 via-indigo-300 to-cyan-400">
+            {personalInfo.name}
+          </span>
         </motion.h1>
 
         {/* Role line */}
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-lg text-accent font-medium leading-relaxed mb-4"
+          className="text-base sm:text-xl font-medium text-slate-300 leading-relaxed mb-4 max-w-2xl"
         >
           {personalInfo.role}
         </motion.p>
@@ -77,45 +95,48 @@ export default function Hero() {
         {/* Tagline */}
         <motion.p
           variants={itemVariants}
-          className="text-base sm:text-lg text-muted leading-relaxed mb-8 max-w-2xl"
+          className="text-base sm:text-lg text-slate-400 leading-relaxed mb-8 max-w-2xl"
         >
           {personalInfo.heroTagline}
         </motion.p>
 
-        {/* Skill Chips */}
-        <motion.div variants={itemVariants} className="flex flex-wrap gap-2 mb-10">
-          {personalInfo.heroChips.map((chip) => (
-            <span
+        {/* Interactive Floating Skill Chips */}
+        <motion.div variants={itemVariants} className="flex flex-wrap gap-2.5 mb-10">
+          {personalInfo.heroChips.map((chip, idx) => (
+            <motion.span
               key={chip}
-              className="font-mono text-xs bg-card text-text border border-border px-3 py-1.5 transition-colors hover:border-accent"
+              whileHover={{ y: -2, scale: 1.04 }}
+              transition={{ duration: 0.2 }}
+              className="font-mono text-xs text-slate-200 bg-slate-900/90 border border-slate-700/80 px-3.5 py-1.5 rounded-lg shadow-sm backdrop-blur-md flex items-center gap-1.5 hover:border-blue-400/60 hover:shadow-[0_0_12px_rgba(59,130,246,0.25)] cursor-default transition-colors"
             >
-              {chip}
-            </span>
+              <span className="w-1.5 h-1.5 rounded-full bg-blue-400" />
+              <span>{chip}</span>
+            </motion.span>
           ))}
         </motion.div>
 
-        {/* Call-to-Action Buttons */}
+        {/* Action Buttons with Rich Hover & Glow states */}
         <motion.div
           variants={itemVariants}
-          className="flex flex-wrap items-center gap-3 w-full sm:w-auto"
+          className="flex flex-wrap items-center gap-3.5 w-full sm:w-auto"
         >
           {/* Primary Action: View Projects */}
           <a
             href="#projects"
             onClick={(e) => handleScrollTo(e, 'projects')}
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-accent text-white font-medium text-sm hover:bg-accent-hover transition-colors min-h-[44px]"
+            className="group relative inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm shadow-glow-sm hover:shadow-glow-md hover:from-blue-500 hover:to-indigo-500 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] min-h-[46px]"
           >
             <span>View Projects</span>
-            <ArrowDown className="w-4 h-4" />
+            <ArrowDown className="w-4 h-4 transition-transform duration-200 group-hover:translate-y-0.5" />
           </a>
 
           {/* Secondary Action: Download Resume */}
           <a
             href={links.resume}
             download="Uday_Pratap_Singh_Resume.pdf"
-            className="inline-flex items-center justify-center gap-2 px-5 py-2.5 bg-card border border-border text-text font-medium text-sm hover:border-accent hover:text-accent transition-colors min-h-[44px]"
+            className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 font-medium text-sm hover:border-blue-500/60 hover:text-white hover:bg-slate-800 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] min-h-[46px]"
           >
-            <Download className="w-4 h-4" />
+            <Download className="w-4 h-4 text-blue-400" />
             <span>Download Resume</span>
           </a>
 
@@ -123,9 +144,9 @@ export default function Hero() {
           <a
             href="#contact"
             onClick={(e) => handleScrollTo(e, 'contact')}
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-card border border-border text-muted font-medium text-sm hover:border-accent hover:text-text transition-colors min-h-[44px]"
+            className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-300 font-medium text-sm hover:border-slate-600 hover:text-white hover:bg-slate-800 transition-all duration-200 hover:scale-[1.02] min-h-[46px]"
           >
-            <Mail className="w-4 h-4" />
+            <Mail className="w-4 h-4 text-slate-400" />
             <span>Contact Me</span>
           </a>
 
@@ -135,7 +156,7 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Uday's GitHub profile"
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-card border border-border text-muted font-medium text-sm hover:border-accent hover:text-text transition-colors min-h-[44px]"
+            className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-300 font-medium text-sm hover:border-blue-500/50 hover:text-white hover:bg-slate-800 transition-all duration-200 hover:scale-[1.02] min-h-[46px]"
           >
             <Github className="w-4 h-4" />
             <span>GitHub</span>
@@ -147,9 +168,9 @@ export default function Hero() {
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Uday's LinkedIn profile"
-            className="inline-flex items-center justify-center gap-2 px-4 py-2.5 bg-card border border-border text-muted font-medium text-sm hover:border-accent hover:text-text transition-colors min-h-[44px]"
+            className="inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-300 font-medium text-sm hover:border-indigo-500/50 hover:text-white hover:bg-slate-800 transition-all duration-200 hover:scale-[1.02] min-h-[46px]"
           >
-            <Linkedin className="w-4 h-4" />
+            <Linkedin className="w-4 h-4 text-blue-400" />
             <span>LinkedIn</span>
           </a>
         </motion.div>
