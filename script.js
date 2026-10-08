@@ -140,7 +140,57 @@ async function loadGitHubHeatmap() {
     if (achievementEl) {
       achievementEl.innerHTML = `This year, I achieved <strong>${totalContributions}</strong> contributions`;
     }
+
+    // Immediately scroll to the latest contributions (Sept/Oct)
+    scrollHeatmapToLatest();
+    requestAnimationFrame(scrollHeatmapToLatest);
+    setTimeout(scrollHeatmapToLatest, 50);
+    setTimeout(scrollHeatmapToLatest, 200);
+    setTimeout(scrollHeatmapToLatest, 500);
   }
+
+  function scrollHeatmapToLatest() {
+    const scrollArea = document.getElementById('heatmapScrollArea');
+    if (!scrollArea) return;
+    scrollArea.scrollLeft = scrollArea.scrollWidth - scrollArea.clientWidth;
+  }
+
+  // Drag-to-scroll support for desktop
+  const scrollArea = document.getElementById('heatmapScrollArea');
+  if (scrollArea && !scrollArea.dataset.dragInit) {
+    scrollArea.dataset.dragInit = 'true';
+    let isDown = false;
+    let startX = 0;
+    let scrollStart = 0;
+
+    scrollArea.addEventListener('mousedown', (e) => {
+      isDown = true;
+      startX = e.pageX - scrollArea.offsetLeft;
+      scrollStart = scrollArea.scrollLeft;
+    });
+
+    window.addEventListener('mouseup', () => {
+      isDown = false;
+    });
+
+    scrollArea.addEventListener('mousemove', (e) => {
+      if (!isDown) return;
+      e.preventDefault();
+      const x = e.pageX - scrollArea.offsetLeft;
+      const walk = (x - startX) * 1.5;
+      scrollArea.scrollLeft = scrollStart - walk;
+    });
+  }
+
+  window.addEventListener('load', () => {
+    scrollHeatmapToLatest();
+    setTimeout(scrollHeatmapToLatest, 100);
+    setTimeout(scrollHeatmapToLatest, 300);
+  });
+
+  window.addEventListener('resize', () => {
+    scrollHeatmapToLatest();
+  });
 
   function formatDate(dateStr) {
     if (!dateStr) return 'Date';

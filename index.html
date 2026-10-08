@@ -468,26 +468,30 @@
     <!-- ==================== GITHUB CONTRIBUTION HEATMAP ==================== -->
     <section class="section-block" id="github-section">
       <div class="dashed-card heatmap-card">
-        <!-- Month headers -->
-        <div class="heatmap-months-bar" id="heatmapMonthsBar">
-          <span>Oct</span>
-          <span>Nov</span>
-          <span>Dec</span>
-          <span>Jan</span>
-          <span>Feb</span>
-          <span>Mar</span>
-          <span>Apr</span>
-          <span>May</span>
-          <span>Jun</span>
-          <span>Jul</span>
-          <span>Aug</span>
-          <span>Sep</span>
-        </div>
+        <!-- Heatmap Scroll Container (Auto-scrolled to latest contributions) -->
+        <div class="heatmap-scroll-area" id="heatmapScrollArea">
+          <div class="heatmap-scroll-inner">
+            <!-- Month headers aligned with 52-week grid -->
+            <div class="heatmap-months-bar" id="heatmapMonthsBar">
+              <span>Oct</span>
+              <span>Nov</span>
+              <span>Dec</span>
+              <span>Jan</span>
+              <span>Feb</span>
+              <span>Mar</span>
+              <span>Apr</span>
+              <span>May</span>
+              <span>Jun</span>
+              <span>Jul</span>
+              <span>Aug</span>
+              <span>Sep</span>
+              <span>Oct</span>
+            </div>
 
-        <!-- Heatmap Grid Container -->
-        <div class="heatmap-scroll-area">
-          <div class="heatmap-grid" id="heatmapGrid" aria-label="GitHub Contributions Heatmap">
-            <!-- Dynamically populated with 52 weeks x 7 days -->
+            <!-- Heatmap Grid Container -->
+            <div class="heatmap-grid" id="heatmapGrid" aria-label="GitHub Contributions Heatmap">
+              <!-- Dynamically populated with 52 weeks x 7 days -->
+            </div>
           </div>
         </div>
 

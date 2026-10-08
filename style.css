@@ -826,19 +826,32 @@ body {
   position: relative;
 }
 
+.heatmap-scroll-area {
+  overflow-x: auto;
+  padding-bottom: 6px;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+}
+
+.heatmap-scroll-area:active {
+  cursor: grabbing;
+}
+
+.heatmap-scroll-inner {
+  width: max-content;
+  display: flex;
+  flex-direction: column;
+}
+
 .heatmap-months-bar {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 10px;
-  padding-left: 24px;
+  width: 100%;
+  margin-bottom: 8px;
   font-family: var(--font-mono);
   font-size: 0.74rem;
   color: var(--text-muted);
-}
-
-.heatmap-scroll-area {
-  overflow-x: auto;
-  padding-bottom: 4px;
+  user-select: none;
 }
 
 .heatmap-scroll-area::-webkit-scrollbar {
@@ -846,7 +859,7 @@ body {
 }
 
 .heatmap-scroll-area::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.15);
   border-radius: 4px;
 }
 
