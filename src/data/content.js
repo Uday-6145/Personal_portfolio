@@ -4,7 +4,7 @@ export const links = {
   github: "https://github.com/Uday-6145",
   githubRepos: "https://github.com/Uday-6145?tab=repositories",
   linkedin: "https://www.linkedin.com/in/uday-pratap-singh-8a0a40375",
-  resume: "/Uday_Pratap_Singh_Resume.pdf",
+  resume: "/Uday_Pratap_Singh_Software_Development_Intern_Resume.pdf",
 };
 
 export const personalInfo = {

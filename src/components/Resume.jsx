@@ -29,7 +29,7 @@ export default function Resume() {
             <div>
               <div className="flex items-center gap-2 mb-1">
                 <h3 className="text-xl font-bold text-white">
-                  {personalInfo.name} — Curriculum Vitae
+                  {personalInfo.name} | Curriculum Vitae
                 </h3>
                 <span className="hidden sm:inline-flex items-center gap-1 font-mono text-[11px] text-emerald-400 bg-emerald-500/10 border border-emerald-500/20 px-2 py-0.5 rounded-full">
                   <CheckCircle2 className="w-3 h-3" />
@@ -46,7 +46,7 @@ export default function Resume() {
             {/* Download Resume with Glowing Gradient */}
             <a
               href={links.resume}
-              download="Uday_Pratap_Singh_Resume.pdf"
+              download="Uday_Pratap_Singh_Software_Development_Intern_Resume.pdf"
               className="inline-flex items-center justify-center gap-2.5 px-6 py-3 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 text-white font-semibold text-sm shadow-glow-sm hover:shadow-glow-md hover:from-blue-500 hover:to-indigo-500 transition-all duration-200 hover:scale-[1.02] min-h-[46px]"
             >
               <Download className="w-4 h-4" />

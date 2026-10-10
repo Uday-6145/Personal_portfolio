@@ -133,7 +133,7 @@ export default function Hero() {
           {/* Secondary Action: Download Resume */}
           <a
             href={links.resume}
-            download="Uday_Pratap_Singh_Resume.pdf"
+            download="Uday_Pratap_Singh_Software_Development_Intern_Resume.pdf"
             className="inline-flex items-center justify-center gap-2 px-5 py-3 rounded-xl bg-slate-900/90 border border-slate-700/80 text-slate-200 font-medium text-sm hover:border-blue-500/60 hover:text-white hover:bg-slate-800 transition-all duration-200 hover:scale-[1.02] active:scale-[0.98] min-h-[46px]"
           >
             <Download className="w-4 h-4 text-blue-400" />
