@@ -1,5 +1,5 @@
 /* ================================================================
-   PORTFOLIO V2 | ULTRA CLEAN MINIMALIST DESIGN
+   PORTFOLIO V2 — MANISH-STYLE ULTRA CLEAN MINIMALIST DESIGN
    ================================================================ */
 
 *, *::before, *::after {
@@ -29,8 +29,8 @@
   --accent-discord: #5865f2;
   --accent-orange: #f97316;
 
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  --font-mono: 'JetBrains Mono', 'SF Mono', Monaco, Consolas, monospace;
+  --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'Geist Mono', 'SF Mono', Monaco, Consolas, monospace;
 
   --radius-card: 14px;
   --radius-sm: 8px;
@@ -120,11 +120,8 @@ body {
   transform: translateY(-1px);
 }
 
-.oss-star,
-.oss-star-svg {
-  display: inline-block;
-  vertical-align: middle;
-  flex-shrink: 0;
+.oss-star {
+  font-size: 0.85rem;
 }
 
 /* ==================== MAIN PAGE CONTAINER ==================== */
@@ -238,11 +235,9 @@ body {
 }
 
 .gear-icon {
-  width: 14px;
-  height: 14px;
+  font-size: 0.85rem;
   opacity: 0.8;
   display: inline-block;
-  vertical-align: middle;
   transition: transform 0.5s ease;
 }
 
@@ -263,22 +258,10 @@ body {
 .meta-item {
   display: inline-flex;
   align-items: center;
-  gap: 5px;
-}
-
-.meta-svg,
-.clock-icon-svg {
-  display: inline-block;
-  vertical-align: middle;
-  color: var(--text-muted);
-  flex-shrink: 0;
+  gap: 4px;
 }
 
 .clock-item {
-  color: var(--text-secondary);
-}
-
-.clock-item .clock-icon-svg {
   color: var(--text-secondary);
 }
 
@@ -1286,20 +1269,10 @@ body {
 }
 
 .uses-cat-title {
-  display: flex;
-  align-items: center;
-  gap: 7px;
   font-size: 0.88rem;
   font-weight: 600;
   color: #ffffff;
   margin-bottom: 8px;
-}
-
-.uses-cat-svg {
-  display: inline-block;
-  vertical-align: middle;
-  color: var(--accent-blue);
-  flex-shrink: 0;
 }
 
 .uses-list {
@@ -1419,17 +1392,8 @@ body {
 }
 
 .footer-made {
-  display: inline-flex;
-  align-items: center;
-  gap: 6px;
   font-size: 0.84rem;
   color: var(--text-muted);
-}
-
-.footer-heart-svg {
-  display: inline-block;
-  vertical-align: middle;
-  flex-shrink: 0;
 }
 
 .footer-bottom {
