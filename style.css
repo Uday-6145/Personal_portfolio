@@ -1217,81 +1217,6 @@ body {
   margin-top: 5px;
 }
 
-/* ==================== /USES SECTION ==================== */
-.uses-card {
-  padding: 20px;
-}
-
-.uses-intro-text {
-  font-size: 0.92rem;
-  color: var(--text-secondary);
-  line-height: 1.5;
-  margin-bottom: 14px;
-}
-
-.uses-toggle-btn {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 7px 16px;
-  border-radius: var(--radius-sm);
-  background: rgba(255, 255, 255, 0.06);
-  border: 1px solid var(--border-dashed);
-  color: #ffffff;
-  font-size: 0.84rem;
-  font-weight: 500;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.uses-toggle-btn:hover {
-  background: rgba(255, 255, 255, 0.12);
-  border-color: var(--border-dashed-hover);
-}
-
-.uses-drawer {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.35s ease, margin-top 0.35s ease;
-}
-
-.uses-drawer.open {
-  max-height: 450px;
-  margin-top: 18px;
-}
-
-.uses-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 16px;
-  padding-top: 10px;
-  border-top: 1px dashed rgba(255, 255, 255, 0.08);
-}
-
-.uses-cat-title {
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #ffffff;
-  margin-bottom: 8px;
-}
-
-.uses-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
-
-.uses-list li {
-  font-size: 0.8rem;
-  color: var(--text-secondary);
-  line-height: 1.4;
-}
-
-.uses-list li strong {
-  color: var(--text-primary);
-}
-
 /* ==================== CONNECT / CONTACT SECTION ==================== */
 .connect-card {
   padding: 22px;
@@ -1434,11 +1359,6 @@ body {
   }
 
   .project-card-grid {
-    grid-template-columns: 1fr;
-    gap: 14px;
-  }
-
-  .uses-grid {
     grid-template-columns: 1fr;
     gap: 14px;
   }

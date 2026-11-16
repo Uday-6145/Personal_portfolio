@@ -256,23 +256,7 @@ window.toggleTimeline = function(element) {
   }
 };
 
-// 5. /USES DRAWER TOGGLE
-window.toggleUsesSetup = function() {
-  const drawer = document.getElementById('usesDrawer');
-  const btnText = document.getElementById('usesBtnText');
-  if (!drawer) return;
-
-  const isOpen = drawer.classList.contains('open');
-  if (isOpen) {
-    drawer.classList.remove('open');
-    if (btnText) btnText.textContent = 'See my setup';
-  } else {
-    drawer.classList.add('open');
-    if (btnText) btnText.textContent = 'Hide setup';
-  }
-};
-
-// 6. NAVBAR SCROLL HIGHLIGHTING & SMOOTH SCROLLING
+// 5. NAVBAR SCROLL HIGHLIGHTING & SMOOTH SCROLLING
 const navItems = document.querySelectorAll('.nav-links .nav-item');
 const sections = document.querySelectorAll('section[id]');
 
